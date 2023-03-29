@@ -29,7 +29,6 @@ const person3 = new Person("Vivi", 40, "Swiss");
 const person4 = new Person("Roulette", 45, "Chinese");
 const person5 = new Person('Ema', 27, 'Italian');
 
-
 const persons = [person1, person2, person3, person4, person5];
 
 for (let i = 0; i < persons.length; i++) {
