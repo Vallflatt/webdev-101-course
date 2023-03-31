@@ -9,18 +9,34 @@ alert('assignment4 is loaded');
 // 5. display person informations name, age, nationality in for loop for all persons older than 25
 // if a person's name is shorter than 6 characters display console.log "person name is not valid"
 
-class Person {
-  constructor(name, age, nationality,) {
-    this.name = name;
-    this.age = age;
-    this.nationality = nationality;
-  }
+// class Person {
+//   constructor(name, age, nationality,) {
+//     this.name = name;
+//     this.age = age;
+//     this.nationality = nationality;
+//   }
+//
+//   displayInfo() {
+//     console.log("Name: ", this.name);
+//     console.log("Age: ", this.age);
+//     console.log("Nationality: ", this.nationality);
+//   }
+// }
 
-  displayInfo() {
-    console.log("Name: ", this.name);
-    console.log("Age: ", this.age);
-    console.log("Nationality: ", this.nationality);
-  }
+function Person(
+  name,
+  age,
+  nationality
+) {
+  this.name = name;
+  this.age = age;
+  this.nationality = nationality;
+}
+
+Person.prototype.displayInfo = function() {
+  console.log(this.name);
+  console.log(this.age);
+  console.log(this.nationality);
 }
 
 const person1 = new Person("Léal", 18, "Mexican");

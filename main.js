@@ -1,28 +1,6 @@
 runApp();
 
 function runApp() {
-  const outerValue = 1000;
-
-  function sayHello() {
-    const welcome = "Hello there";
-    console.log(welcome);
-
-    function innerHello() {
-      const outerValue = 2000;
-      const innerVariable = "Inner Hello";
-      // Notice Closure when uncommented
-      console.log(outerValue);
-      console.log(welcome);
-      console.log(outerValue);
-      console.log(innerVariable);
-    }
-
-    // console.log(innerVariable);
-    innerHello();
-  }
-
-  // innerHello()
-
   class Product {
     constructor(
       name = "Default Name",
@@ -38,46 +16,54 @@ function runApp() {
       this.image = image;
     }
 
-    displayInfo() {
-      console.log("Name: " + this.name);
-      console.log("Type: " + this.type);
-      console.log("Price: " + this.price);
-      console.log("Currency: " + this.currency);
-      console.log("Image: " + this.image);
+    displayInfo(additionalInfo = "") {
+      const info = `
+      Name: ${this.name}, 
+      Type: ${this.type},
+      Price: ${this.price}, 
+      Currency: ${this.currency},
+      Image: ${this.image}
+      ${additionalInfo}`;
+
+      console.log(info);
     }
   }
 
   class FancyProduct extends Product {
+    constructor(
+      name,
+      type,
+      price,
+      currency,
+      image,
+      hasInsurance
+    ) {
+      super(name, type, price, currency, image);
+      this.hasInsurance = hasInsurance;
+    }
     fancyFunction() {
       console.log("I am a fancy product!!!!");
     }
+    displayInfo() {
+      super.displayInfo(`Has Insurance: ${this.hasInsurance}`);
+    }
   }
 
-  sayHello();
-
-  {
-    let person = "Filip Jerga";
-    console.log(person);
-  }
-
-  // not available
-  // console.log(person);
-
-
-  if (true) {
-    let againScope = "if scope";
-    console.log(againScope);
-  }
-
-  // not available
-  // console.log(againScope);
-
-  const product1 = new Product("Laptop", "eletronics", 500, "usd", "some_url_of_image");
+  const product1 = new Product("Laptop", "electronics", 500, "usd", "some_url_of_image");
   const product2 = new Product("Super shoes", "clothing", 50, "usd", "some_url_of_image");
   const product3 = new Product();
   const product4 = new Product("Fancy Hat", "clothing", 100);
   const product5 = new Product("Skateboard");
-  const products = [product1, product2, product3, product4, product5];
+  const product6 = new FancyProduct(
+    "Fancy phone",
+    "phone",
+    1000,
+    "USD",
+    "some_url_of_image",
+    true
+  );
+
+  const products = [product1, product2, product3, product4, product5, product6];
 
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
