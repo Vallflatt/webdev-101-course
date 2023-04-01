@@ -1,0 +1,53 @@
+/** {*/
+/*  box-sizing: border-box;*/
+/*  margin: 0;*/
+/*}*/
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(5, 5, 90);
+  font-size: 45px;
+  padding-bottom: 10px;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(68 68 110);
+}
+
+.header {
+  background-color: rgb(224, 222, 222);
+}
+
+.header-text {
+  padding: 20px;
+  text-align: center;
+}
+
+.product {
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+.product-field {
+  font-size: 20px;
+}
+
+.product-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  text-align:center;
+}
+
+.page {
+  padding-top: 50px;
+}

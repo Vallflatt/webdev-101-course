@@ -29,41 +29,12 @@ function runApp() {
     }
   }
 
-  class FancyProduct extends Product {
-    constructor(
-      name,
-      type,
-      price,
-      currency,
-      image,
-      hasInsurance
-    ) {
-      super(name, type, price, currency, image);
-      this.hasInsurance = hasInsurance;
-    }
-    fancyFunction() {
-      console.log("I am a fancy product!!!!");
-    }
-    displayInfo() {
-      super.displayInfo(`Has Insurance: ${this.hasInsurance}`);
-    }
-  }
-
   const product1 = new Product("Laptop", "electronics", 500, "usd", "some_url_of_image");
   const product2 = new Product("Super shoes", "clothing", 50, "usd", "some_url_of_image");
-  const product3 = new Product();
-  const product4 = new Product("Fancy Hat", "clothing", 100);
-  const product5 = new Product("Skateboard");
-  const product6 = new FancyProduct(
-    "Fancy phone",
-    "phone",
-    1000,
-    "USD",
-    "some_url_of_image",
-    true
-  );
+  const product3 = new Product("Smartphone", "phones", 300, "USD", "some_url_of_image");
+  const product4 = new Product("Fancy Hat", "clothing", 100, "USD", "some_url_of_image");
 
-  const products = [product1, product2, product3, product4, product5, product6];
+  const products = [product1, product2, product3, product4];
 
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
