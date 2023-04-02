@@ -24,13 +24,23 @@ h4 {
   text-align: center;
 }
 
+.page {
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: auto;
+  height: 1000px;
+  background-color: antiquewhite;
+}
+
 .product {
   padding: 20px;
   border: 1px solid black;
-  margin-bottom: 20px;
-  display: inline-block;
-  text-align: left;
-  font-family: sans-serif;
+  height: 180px;
+  width: 250px;
+  margin: 10px;
 }
 
 .product-field {
@@ -41,13 +51,10 @@ h4 {
   font-weight: bold;
   margin-right: 5px;
 }
-
-.container {
-  max-width: 1280px;
-  margin: auto;
-  text-align:center;
+.product-list {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-.page {
-  padding-top: 50px;
-}
+
