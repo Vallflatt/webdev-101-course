@@ -1,45 +1,18 @@
-/** {*/
-/*  box-sizing: border-box;*/
-/*  margin: 0;*/
-/*}*/
-
-h1 {
-  font-family: 'Times New Roman', Times, serif;
-  color: rgb(5, 5, 90);
-  font-size: 45px;
-  padding-bottom: 10px;
-}
-
-h4 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(68 68 110);
-}
-
-.header {
-  background-color: rgb(224, 222, 222);
-}
-
-.header-text {
-  padding: 20px;
-  text-align: center;
+.container {
+  max-width: 1480px;
+  margin: auto;
+  position: relative;
 }
 
 .page {
   padding-top: 50px;
 }
 
-.container {
-  max-width: 1480px;
-  margin: auto;
-  height: 1000px;
-  background-color: antiquewhite;
-}
-
 .product {
-  padding: 20px;
+  flex: 1;
   border: 1px solid black;
+  padding: 20px;
   height: 180px;
-  width: 250px;
   margin: 10px;
 }
 
@@ -48,13 +21,21 @@ h4 {
 }
 
 .product-label {
+  margin-right: 10px;
   font-weight: bold;
-  margin-right: 5px;
+  font-size: 25px;
 }
+
 .product-list {
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+.product-row {
+  display: flex;
+}
+
+
 
 
