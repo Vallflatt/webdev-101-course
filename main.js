@@ -2,46 +2,8 @@ runApp();
 
 function runApp() {
 
-  // examples for callback functions
-  // const productElement1 = document.getElementById("product1");
-  const productElements = document.getElementsByClassName("product");
-  const container = document.getElementById("productContainer");
-  // function to create the html structure: 1. div product row, div product 1, div product
-  // field span product label 5 times
-
-  const createProductRow = () => {
-    const row = document.createElement("div");
-    row.classList.add("product-row")
-    return row;
-  }
-
-  const createProductElement = () => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    return productElement;
-  }
-
-  const row = createProductRow();
-  const productElement = createProductElement();
-
-  row.appendChild(productElement);
-  container.appendChild(row);
-
-
-
-  // for(let i = 0; i < productElements.length; i++) {
-  //   const product = productElements[i]
-  //   product.addEventListener("click", () => {console.log(`Hello World ${i + 1}`)});
-  // }
-
   class Product {
-    constructor(
-      name = "Default Name",
-      type,
-      price,
-      currency = "usd",
-      image = "unsplash_url"
-    ) {
+    constructor(name = "Default Name", type, price, currency = "usd", image = "unsplash_url") {
       this.name = name;
       this.type = type;
       this.price = price;
@@ -69,9 +31,58 @@ function runApp() {
 
   const products = [product1, product2, product3, product4];
 
-  for (let i = 0; i < products.length; i++) {
-    const product = products[i];
-    product.displayInfo();
-    console.log("-----------------");
+  const container = document.getElementById("productContainer");
+
+  const createProductRow = () => {
+    const row = document.createElement("div");
+    row.classList.add("product-row");
+    return row;
   }
+
+  const createProductElement = () => {
+    const productElement = document.createElement("div");
+    productElement.classList.add("product");
+
+    const productLabels = ["Name", "Type", "Price", "Currency", "Image"];
+    productLabels.forEach(label => {
+      const productField = document.createElement("div");
+      const productLabel = document.createElement("span");
+
+      productField.classList.add("product-field");
+      productLabel.classList.add("product-label");
+
+      productLabel.innerHTML = `${label}:`;
+      const text = document.createTextNode("In Progress");
+
+      productField.appendChild(productLabel);
+      productField.appendChild(text);
+      productElement.appendChild(productField);
+    })
+
+    return productElement;
+  }
+
+
+  let row;
+
+  products.forEach((product, index) => {
+
+    if (index % 2 === 0) {
+      row = createProductRow();
+      container.appendChild(row);
+    }
+
+    row.appendChild(createProductElement());
+
+    // row =  createProductRow();
+    // row.appendChild(productElement);
+    // container.appendChild(row);
+  })
+
+
+  let a = 10;
+  let b = 20;
+  console.log(a, b);
+  [a, b] = [b, a];
+  console.log(a, b);
 }
