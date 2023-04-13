@@ -1,29 +1,25 @@
-function Dog(name, age) {
-  this.name = name;
-  this.age = age;
+const nums = [10, 3, 4, 8, 5, 2, 6];
+const nums2 = [1, 3, 7, 20, 30];
 
-  // TODO: Implement method "getHumanAge" where you will return the human age of a dog
-  // assume 1 dog year equals 7 human years
-  this.getHumanAge = function () {
-    return this.age * 7
-  }
-  this.displayInfo = function (params) {
-    console.log(`${this.name} is ${this.age}`);
-  }
-  // TODO: Implement method "displayInfo" where you will console.log dog's name and age
-  // see example bellow
-}
+Array.prototype.customFilter = function() {
+  // Finish implementation
+  // return new array of numbers greater than 5
+  // const newArray = [];
+  // for (let i = 0; i < this.length; i++) {
+  //   const val = this[i]
+  //     if (val > 5) {
+  //       newArray.push(val);
+  //     }
+  //   }
+  // return newArray
+  return this.filter(val => val > 5);
+};
 
-const ben = new Dog('Ben', 10);
-const jen = new Dog('Jen', 5);
+// here should be numbers only greater than 5
+// filteredNums should hold [10, 8, 6]
+const filteredNums = nums.customFilter();
+console.log(filteredNums);
 
-// should return 70
-const benAgeToHumanYears = ben.getHumanAge();
-
-// should return 35
-const jenAgeToHumanYears = jen.getHumanAge();
-
-// console.log - "Ben is 10"
-ben.displayInfo();
-// console.log - "Jen is 5"
-jen.displayInfo();
+// filteredNums2 should hold [7, 20, 30]
+const filteredNums2 = nums2.customFilter();
+console.log(filteredNums2);

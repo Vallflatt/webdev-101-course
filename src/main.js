@@ -1,19 +1,11 @@
+
 runApp();
 
 function runApp() {
 
-  Array.prototype.customForEach = function() {
-    for (let i = 0; i < this.length; i++) {
-      console.log(this[i]);
-    }
-  }
-
-  const product1 = new Product("Laptop", "electronics", 500, "usd", "some_url_of_image");
-  const product2 = new Product("Super shoes", "clothing", 50, "usd", "some_url_of_image");
-  const product3 = new Product("Smartphone", "phones", 300, "USD", "some_url_of_image");
-  const product4 = new Product("Fancy Hat", "clothing", 100, "USD", "some_url_of_image");
-
-  const products = [product1, product2, product3, product4];
+  const products = PRODUCT_DATA.map(item =>
+      new Product(item.name, item.type, item.price, item.currency, item.image)
+  );
 
   const container = document.getElementById("productContainer");
 
@@ -22,10 +14,10 @@ function runApp() {
     container.appendChild(productElement);
   })
 
-  const numbers = [1, 2, 3, 4];
-  const animals = ["dog", "cat", "horse"];
+  // PRODUCT_DATA.reduce((el, item) => {
+  //   const product = createProductElement(new Product(item.name, item.type, item.price, item.currency, item.image))
+  //   el.appendChild(product);
+  //   return el
+  // }, document.getElementById("productContainer"))
 
-  products.customForEach();
-  numbers.customForEach();
-  animals.customForEach();
 }
