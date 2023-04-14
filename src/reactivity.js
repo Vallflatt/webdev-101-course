@@ -5,10 +5,10 @@ const _createElement = (elementType, classList) => {
 }
 
 const createProductElement = (product) => {
-  const productElement = _createElement("div", "product");
-  // improvements: how to create the labels dynamically from the product
 
-  //const productLabels = ["Name", "Type", "Price", "Currency", "Image"];
+  const productElement = _createElement("div", "product");
+  productElement.classList.add(product.isOnStock ? "product-on-stock" : "product-not-on-stock");
+
   const productLabels = Object.keys(product);
 
   productLabels.forEach(label => {
